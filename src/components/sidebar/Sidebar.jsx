@@ -6,7 +6,7 @@ import Inventory2SharpIcon from '@mui/icons-material/Inventory2Sharp';
 import LocalGroceryStoreSharpIcon from '@mui/icons-material/LocalGroceryStoreSharp';
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
-
+import CategoryIcon from '@mui/icons-material/Category';
 
 const Sidebar = () => {
   return (
@@ -40,7 +40,13 @@ const Sidebar = () => {
       <li>
             <LocalGroceryStoreSharpIcon className="icon" />
         <span>Orders</span>
-      </li>
+        </li>
+        <Link to="/categories">
+        <li>
+          <CategoryIcon className="icon"/>  
+          <span>Categories</span>
+        </li>
+        </Link>
       <p className="title">USER</p>
       <li>
             <AccountCircleSharpIcon className="icon" />
