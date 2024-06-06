@@ -7,8 +7,12 @@ import LocalGroceryStoreSharpIcon from '@mui/icons-material/LocalGroceryStoreSha
 import AccountCircleSharpIcon from '@mui/icons-material/AccountCircleSharp';
 import LogoutSharpIcon from '@mui/icons-material/LogoutSharp';
 import CategoryIcon from '@mui/icons-material/Category';
+import { DarkModeContext } from "../../context/darkModeContext";
+import { useContext } from "react";
 
 const Sidebar = () => {
+  const { dispatch } = useContext(DarkModeContext);
+
   return (
   <div className="sidebar">
   <div className="top">
@@ -40,13 +44,13 @@ const Sidebar = () => {
       <li>
             <LocalGroceryStoreSharpIcon className="icon" />
         <span>Orders</span>
-        </li>
-        <Link to="/categories">
-        <li>
-          <CategoryIcon className="icon"/>  
-          <span>Categories</span>
-        </li>
-        </Link>
+      </li>
+      <Link to="/categories">
+      <li>
+            <CategoryIcon className="icon"/>  
+        <span>Categories</span>
+      </li>
+      </Link>
       <p className="title">USER</p>
       <li>
             <AccountCircleSharpIcon className="icon" />
@@ -59,8 +63,8 @@ const Sidebar = () => {
     </ul>
   </div>
   <div className="bottom">
-    <div className="colorOption"></div>
-    <div className="colorOption"></div>
+    <div className="colorOption" onClick={() =>dispatch({type: "LIGHT"})}></div>
+    <div className="colorOption" onClick={() =>dispatch({type: "DARK"})}></div>
   </div>
 </div>
   );
